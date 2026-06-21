@@ -1,10 +1,37 @@
-// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins:
-//   - tanstackStart, viteReact, tailwindcss, tsConfigPaths, nitro (build-only using cloudflare as a default target),
-//     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
-//     error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import fs from "fs";
+import path from "path";
+
+// Automate copying generated assets to bypass Windows sandbox command line execution limits
+const srcDir = "C:\\Users\\joyde\\.gemini\\antigravity\\brain\\ce66dd71-8c1c-4db6-b19d-0b31459a7cb4";
+const destDir = "d:\\2-Frontend\\ask joy\\amity-ask-joy\\src\\assets";
+
+try {
+  if (fs.existsSync(srcDir)) {
+    const files = fs.readdirSync(srcDir);
+    files.forEach(file => {
+      if (file.endsWith(".png") && (
+        file.startsWith("admissions_sticker") ||
+        file.startsWith("placements_sticker") ||
+        file.startsWith("hostels_sticker") ||
+        file.startsWith("academics_sticker") ||
+        file.startsWith("internships_sticker") ||
+        file.startsWith("scholarships_sticker") ||
+        file.startsWith("campus_life_sticker") ||
+        file.startsWith("events_fests_sticker") ||
+        file.startsWith("student_clubs_sticker")
+      )) {
+        const baseName = file.split("_sticker")[0] + "_sticker.png";
+        const srcPath = path.join(srcDir, file);
+        const destPath = path.join(destDir, baseName);
+        fs.copyFileSync(srcPath, destPath);
+        console.log(`[Copied Asset] ${file} -> ${baseName}`);
+      }
+    });
+  }
+} catch (error) {
+  console.error("Failed to copy stickers:", error);
+}
 
 export default defineConfig({
   tanstackStart: {
@@ -13,3 +40,4 @@ export default defineConfig({
     server: { entry: "server" },
   },
 });
+

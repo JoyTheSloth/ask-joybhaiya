@@ -51,10 +51,10 @@
 
   --paper: oklch(0.995 0.005 95);
   --ink: oklch(0.18 0.02 260);
-  --sky: oklch(0.93 0.05 250);
-  --sun: oklch(0.88 0.16 90);
-  --mint: oklch(0.92 0.07 160);
-  --pink: oklch(0.92 0.06 20);
+  --sky: oklch(0.84 0.16 230);
+  --sun: oklch(0.86 0.22 90);
+  --mint: oklch(0.84 0.18 150);
+  --pink: oklch(0.82 0.20 15);
 
   --background: var(--paper);
   --foreground: var(--ink);
