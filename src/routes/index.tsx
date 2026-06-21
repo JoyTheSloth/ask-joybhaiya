@@ -87,7 +87,7 @@ function Hero() {
             </span>
           </h1>
           <p className="mt-6 font-body text-lg text-ink/80 max-w-xl">
-            Get <span className="highlight-blue font-semibold">honest answers</span> from a current student about placements,
+            Get <span className="highlight-blue font-semibold">honest answers</span> from a recent graduate about placements,
             academics, hostels, internships, campus life, clubs &amp; everything in between.
           </p>
 
