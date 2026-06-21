@@ -267,7 +267,7 @@ function HelpWith() {
 
 /* ---------- meet joy ---------- */
 function MeetJoy() {
-  const tags = ["☕ Coffee Lover", "🎨 Designer", "💻 Tech Enthusiast", "🎓 Student Mentor", "📚 Bookworm", "✿ Community Builder"];
+  const tags = ["🎥 Content Creator", "🎨 UI/UX Designer", "🎓 Amity Alumni", "🚀 Career Explorer", "🤝 Student Mentor"];
   return (
     <section id="meet" className="py-20 px-4 sm:px-6">
       <div className="mx-auto max-w-6xl paper-card bg-white p-6 sm:p-10 grid md:grid-cols-[auto_1fr] gap-10 items-center -rotate-[0.4deg]">
@@ -283,12 +283,17 @@ function MeetJoy() {
           <div className="font-marker text-primary">Meet your mentor</div>
           <h2 className="font-display text-5xl md:text-6xl leading-none mt-1">Hey, I'm Joy 👋</h2>
           <p className="mt-5 font-body text-lg text-ink/80 max-w-xl">
-            I'm a <span className="highlight-yellow">current student at Amity University Kolkata</span>, a UI/UX designer,
-            and that senior who literally cannot stop talking about campus. I started Ask Joy because I was tired of seeing
-            juniors get half-truths from agents and forums.
+            I'm a <span className="highlight-yellow">recent graduate from Amity University Kolkata</span>, a content creator, UI/UX designer,
+            and someone who's spent years helping students navigate college decisions.
           </p>
-          <p className="mt-4 font-hand text-lg">
-            Real student. Real experience. Zero filter. ✨
+          <p className="mt-4 font-body text-lg text-ink/80 max-w-xl">
+            Over time, I found myself answering the same questions again and again in Instagram DMs — placements, hostels, academics, campus life, internships, and what college is actually like.
+          </p>
+          <p className="mt-4 font-body text-lg text-ink/80 max-w-xl">
+            So instead of replying to hundreds of messages individually, I created Ask Joy — a place where you can get honest, unfiltered answers directly from someone who's been through it.
+          </p>
+          <p className="mt-5 font-hand text-xl">
+            Real experience. Honest advice. No agents. No sugarcoating. ✨
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {tags.map((t) => (
