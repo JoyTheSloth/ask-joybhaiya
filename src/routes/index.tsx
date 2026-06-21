@@ -181,7 +181,7 @@ function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {TIERS.map((t) => (
             <motion.div
               key={t.name}
@@ -434,7 +434,11 @@ function Booking() {
             </div>
             <div className="paper-card bg-white p-4 max-w-xs rotate-1">
               <div className="font-display text-2xl">₹99 · 10 min</div>
-              <div className="font-marker text-sm text-ink/70">most popular for first-timers</div>
+              <div className="font-marker text-sm text-ink/70">quick doubt call</div>
+            </div>
+            <div className="paper-card bg-white p-4 max-w-xs -rotate-1">
+              <div className="font-display text-2xl">₹199 · 30 min</div>
+              <div className="font-marker text-sm text-ink/70">google meet session</div>
             </div>
           </div>
           <svg viewBox="0 0 200 100" className="absolute -right-4 top-32 w-32 text-primary hidden lg:block" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -458,8 +462,7 @@ function Booking() {
               <label className="font-marker text-sm">Which session?</label>
               <select className="mt-1 w-full bg-transparent border-b-2 border-ink/40 py-2 font-body focus:outline-none focus:border-primary">
                 <option>Quick Doubt Call — ₹99</option>
-                <option>Google Meet Session — ₹299</option>
-                <option>Premium Mentorship — ₹499</option>
+                <option>Google Meet Session — ₹199</option>
               </select>
             </div>
           </div>
