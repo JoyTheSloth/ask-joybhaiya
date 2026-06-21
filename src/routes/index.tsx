@@ -20,9 +20,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Ask Joy — Honest Amity University Kolkata Mentorship" },
-      { name: "description", content: "Get honest answers from a current Amity University Kolkata student about placements, hostels, academics & campus life. Book a ₹99 call today." },
+      { name: "description", content: "Get honest answers from a recent Amity University Kolkata graduate about placements, hostels, academics & campus life. Book a ₹99 call today." },
       { property: "og:title", content: "Ask Joy — Honest Amity University Kolkata Mentorship" },
-      { property: "og:description", content: "A current student's honest guidance on admissions, hostels, placements and campus life." },
+      { property: "og:description", content: "A recent graduate's honest guidance on admissions, hostels, placements and campus life." },
     ],
   }),
   component: Index,
