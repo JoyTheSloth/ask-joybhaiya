@@ -20,9 +20,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Ask Joy — Honest Amity University Kolkata Mentorship" },
-      { name: "description", content: "Get honest answers from a current Amity University Kolkata student about placements, hostels, academics & campus life. Book a ₹99 call today." },
+      { name: "description", content: "Get honest answers from a recent Amity University Kolkata graduate about placements, hostels, academics & campus life. Book a ₹99 call today." },
       { property: "og:title", content: "Ask Joy — Honest Amity University Kolkata Mentorship" },
-      { property: "og:description", content: "A current student's honest guidance on admissions, hostels, placements and campus life." },
+      { property: "og:description", content: "A recent graduate's honest guidance on admissions, hostels, placements and campus life." },
     ],
   }),
   component: Index,
@@ -87,7 +87,7 @@ function Hero() {
             </span>
           </h1>
           <p className="mt-6 font-body text-lg text-ink/80 max-w-xl">
-            Get <span className="highlight-blue font-semibold">honest answers</span> from a current student about placements,
+            Get <span className="highlight-blue font-semibold">honest answers</span> from a recent graduate about placements,
             academics, hostels, internships, campus life, clubs &amp; everything in between.
           </p>
 
@@ -161,14 +161,9 @@ const TIERS = [
     cta: "Book Now", popular: true, tilt: "-rotate-2",
   },
   {
-    name: "Google Meet Session", price: "₹299", dur: "30 min session", icon: Video,
+    name: "Google Meet Session", price: "₹199", dur: "30 min session", icon: Video,
     perks: ["Detailed discussion", "Screen sharing", "Campus insights", "Career guidance"],
     cta: "Schedule Meet", popular: false, tilt: "rotate-1",
-  },
-  {
-    name: "Premium Mentorship", price: "₹499", dur: "60 min session", icon: Trophy,
-    perks: ["Full roadmap", "Admission guidance", "Career planning", "Campus life overview"],
-    cta: "Book Premium", popular: false, tilt: "-rotate-1",
   },
 ];
 
@@ -186,7 +181,7 @@ function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {TIERS.map((t) => (
             <motion.div
               key={t.name}
@@ -272,7 +267,7 @@ function HelpWith() {
 
 /* ---------- meet joy ---------- */
 function MeetJoy() {
-  const tags = ["☕ Coffee Lover", "🎨 Designer", "💻 Tech Enthusiast", "🎓 Student Mentor", "📚 Bookworm", "✿ Community Builder"];
+  const tags = ["🎥 Content Creator", "🎨 UI/UX Designer", "🎓 Amity Alumni", "🚀 Career Explorer", "🤝 Student Mentor"];
   return (
     <section id="meet" className="py-20 px-4 sm:px-6">
       <div className="mx-auto max-w-6xl paper-card bg-white p-6 sm:p-10 grid md:grid-cols-[auto_1fr] gap-10 items-center -rotate-[0.4deg]">
@@ -288,12 +283,17 @@ function MeetJoy() {
           <div className="font-marker text-primary">Meet your mentor</div>
           <h2 className="font-display text-5xl md:text-6xl leading-none mt-1">Hey, I'm Joy 👋</h2>
           <p className="mt-5 font-body text-lg text-ink/80 max-w-xl">
-            I'm a <span className="highlight-yellow">current student at Amity University Kolkata</span>, a UI/UX designer,
-            and that senior who literally cannot stop talking about campus. I started Ask Joy because I was tired of seeing
-            juniors get half-truths from agents and forums.
+            I'm a <span className="highlight-yellow">recent graduate from Amity University Kolkata</span>, a content creator, UI/UX designer,
+            and someone who's spent years helping students navigate college decisions.
           </p>
-          <p className="mt-4 font-hand text-lg">
-            Real student. Real experience. Zero filter. ✨
+          <p className="mt-4 font-body text-lg text-ink/80 max-w-xl">
+            Over time, I found myself answering the same questions again and again in Instagram DMs — placements, hostels, academics, campus life, internships, and what college is actually like.
+          </p>
+          <p className="mt-4 font-body text-lg text-ink/80 max-w-xl">
+            So instead of replying to hundreds of messages individually, I created Ask Joy — a place where you can get honest, unfiltered answers directly from someone who's been through it.
+          </p>
+          <p className="mt-5 font-hand text-xl">
+            Real experience. Honest advice. No agents. No sugarcoating. ✨
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {tags.map((t) => (
@@ -439,7 +439,11 @@ function Booking() {
             </div>
             <div className="paper-card bg-white p-4 max-w-xs rotate-1">
               <div className="font-display text-2xl">₹99 · 10 min</div>
-              <div className="font-marker text-sm text-ink/70">most popular for first-timers</div>
+              <div className="font-marker text-sm text-ink/70">quick doubt call</div>
+            </div>
+            <div className="paper-card bg-white p-4 max-w-xs -rotate-1">
+              <div className="font-display text-2xl">₹199 · 30 min</div>
+              <div className="font-marker text-sm text-ink/70">google meet session</div>
             </div>
           </div>
           <svg viewBox="0 0 200 100" className="absolute -right-4 top-32 w-32 text-primary hidden lg:block" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -463,8 +467,7 @@ function Booking() {
               <label className="font-marker text-sm">Which session?</label>
               <select className="mt-1 w-full bg-transparent border-b-2 border-ink/40 py-2 font-body focus:outline-none focus:border-primary">
                 <option>Quick Doubt Call — ₹99</option>
-                <option>Google Meet Session — ₹299</option>
-                <option>Premium Mentorship — ₹499</option>
+                <option>Google Meet Session — ₹199</option>
               </select>
             </div>
           </div>
