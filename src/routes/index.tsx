@@ -161,14 +161,9 @@ const TIERS = [
     cta: "Book Now", popular: true, tilt: "-rotate-2",
   },
   {
-    name: "Google Meet Session", price: "₹299", dur: "30 min session", icon: Video,
+    name: "Google Meet Session", price: "₹199", dur: "30 min session", icon: Video,
     perks: ["Detailed discussion", "Screen sharing", "Campus insights", "Career guidance"],
     cta: "Schedule Meet", popular: false, tilt: "rotate-1",
-  },
-  {
-    name: "Premium Mentorship", price: "₹499", dur: "60 min session", icon: Trophy,
-    perks: ["Full roadmap", "Admission guidance", "Career planning", "Campus life overview"],
-    cta: "Book Premium", popular: false, tilt: "-rotate-1",
   },
 ];
 
