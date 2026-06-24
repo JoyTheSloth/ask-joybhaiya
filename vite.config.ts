@@ -3,10 +3,18 @@ import fs from "fs";
 import path from "path";
 
 // Automate copying generated assets to bypass Windows sandbox command line execution limits
-const srcDir = "C:\\Users\\joyde\\.gemini\\antigravity\\brain\\ce66dd71-8c1c-4db6-b19d-0b31459a7cb4";
+const srcDir = "C:\\Users\\joyde\\.gemini\\antigravity\\brain\\5b4c3501-5c0d-4331-b1a6-2904d275da8e";
 const destDir = "d:\\2-Frontend\\ask joy\\amity-ask-joy\\src\\assets";
 
 try {
+  // Copy QR Code
+  const qrSrc = path.join(srcDir, "media__1782313529088.png");
+  const qrDest = "d:\\2-Frontend\\ask joy\\amity-ask-joy\\public\\whatsapp-qr.png";
+  if (fs.existsSync(qrSrc)) {
+    fs.copyFileSync(qrSrc, qrDest);
+    console.log("[Copied QR] whatsapp-qr.png successfully");
+  }
+
   if (fs.existsSync(srcDir)) {
     const files = fs.readdirSync(srcDir);
     files.forEach(file => {
