@@ -2909,47 +2909,47 @@ function DinoGame() {
 
       {/* Game Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-ink/45 backdrop-blur-sm pointer-events-auto">
-          <div className="relative w-full max-w-[600px] bg-white rounded-3xl border-[4px] border-ink p-6 md:p-8 shadow-[8px_8px_0_0_var(--color-ink)] overflow-hidden flex flex-col items-center rotate-[-0.5deg] bg-[linear-gradient(rgba(17,17,17,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(17,17,17,0.05)_1px,transparent_1px)] bg-[size:20px_20px]">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4 bg-ink/45 backdrop-blur-sm pointer-events-auto overflow-y-auto">
+          <div className="relative w-full max-w-[520px] bg-white rounded-3xl border-3 sm:border-[4px] border-ink p-3.5 sm:p-6 md:p-8 shadow-[5px_5px_0_0_var(--color-ink)] sm:shadow-[8px_8px_0_0_var(--color-ink)] overflow-hidden flex flex-col items-center rotate-[-0.5deg] bg-[linear-gradient(rgba(17,17,17,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(17,17,17,0.05)_1px,transparent_1px)] bg-[size:20px_20px] my-auto">
             {/* Red Washi Tape */}
             <div className="tape-strip bg-[#ff2d55]/85 rotate-2 w-32 h-6 -top-3 absolute left-1/2 -translate-x-1/2 border border-ink/20" />
 
             {/* Close Button */}
             <button
               onClick={closeGame}
-              className="absolute top-4 right-4 h-10 w-10 rounded-full border-2 border-ink bg-white hover:bg-slate-100 flex items-center justify-center font-display text-xl font-bold shadow-[2px_2px_0_0_var(--color-ink)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer"
+              className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 h-8 w-8 sm:h-10 sm:w-10 rounded-full border-2 border-ink bg-white hover:bg-slate-100 flex items-center justify-center font-display text-sm sm:text-xl font-bold shadow-[1.5px_1.5px_0_0_var(--color-ink)] sm:shadow-[2px_2px_0_0_var(--color-ink)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer z-30"
             >
               ✕
             </button>
 
             {/* Header */}
-            <h3 className="font-display text-3xl sm:text-4xl text-ink mb-1 rotate-[-1deg] text-center mt-2">
+            <h3 className="font-display text-2xl sm:text-4xl text-ink mb-0.5 rotate-[-1deg] text-center mt-6 sm:mt-2">
               Bunk the Class! 🦖
             </h3>
-            <p className="font-hand text-base text-ink/75 mb-4 text-center leading-tight">
+            <p className="font-hand text-xs sm:text-base text-ink/75 mb-2.5 sm:mb-4 text-center leading-tight">
               Dodge early alarms, surprise tests, and warning letters!
             </p>
 
             {/* Score & Level Panel */}
-            <div className="flex gap-4 sm:gap-8 mb-4 font-marker text-sm sm:text-base text-ink/80 bg-white/95 px-4 py-1.5 rounded-full border-2 border-ink shadow-[2px_2px_0_0_var(--color-ink)]">
+            <div className="flex gap-3 sm:gap-8 mb-2.5 sm:mb-4 font-marker text-xs sm:text-base text-ink/80 bg-white/95 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full border-2 border-ink shadow-[1.5px_1.5px_0_0_var(--color-ink)] sm:shadow-[2px_2px_0_0_var(--color-ink)]">
               <span className="text-rose-500 font-bold">LVL {currentLevel}</span>
               <span>Score: {score}m</span>
               <span>Record: {highScore}m</span>
             </div>
 
             {/* Retro Console Cabinet */}
-            <div className="w-full border-[4px] border-ink rounded-3xl bg-[#e6d0a7] bg-[radial-gradient(#d3bd94_1.5px,transparent_1.5px)] bg-[size:10px_10px] shadow-[inset_0_4px_0_rgba(255,255,255,0.65),6px_6px_0_0_var(--color-ink)] overflow-hidden flex flex-col p-2 relative">
+            <div className="w-full border-3 sm:border-[4px] border-ink rounded-2.5xl sm:rounded-3xl bg-[#e6d0a7] bg-[radial-gradient(#d3bd94_1.5px,transparent_1.5px)] bg-[size:10px_10px] shadow-[inset_0_3px_0_rgba(255,255,255,0.65),4px_4px_0_0_var(--color-ink)] sm:shadow-[inset_0_4px_0_rgba(255,255,255,0.65),6px_6px_0_0_var(--color-ink)] overflow-hidden flex flex-col p-1.5 sm:p-2 relative">
               
               {/* Cute stickers slapped on console */}
-              <div className="absolute top-3 left-5 px-2 py-0.5 bg-[#ffffa0] border border-ink text-[9px] font-hand text-ink/75 rotate-[-6deg] shadow-sm select-none pointer-events-none z-10">
+              <div className="hidden sm:block absolute top-3 left-5 px-2 py-0.5 bg-[#ffffa0] border border-ink text-[9px] font-hand text-ink/75 rotate-[-6deg] shadow-sm select-none pointer-events-none z-10">
                 BUNK METERS ✏️
               </div>
-              <div className="absolute bottom-3 left-18 px-2.5 py-0.5 bg-rose-100 border border-ink text-[8px] font-marker text-[#ff2d55] rotate-[8deg] shadow-sm select-none pointer-events-none z-10">
+              <div className="hidden sm:block absolute bottom-3 left-18 px-2.5 py-0.5 bg-rose-100 border border-ink text-[8px] font-marker text-[#ff2d55] rotate-[8deg] shadow-sm select-none pointer-events-none z-10">
                 <s>75% ATTENDANCE</s> 🚫
               </div>
 
               {/* Screen Bezel Frame */}
-              <div className="relative border-[4px] border-ink rounded-2.5xl overflow-hidden bg-[#e5e0d4] flex flex-col w-full shadow-[inset_0_4px_8px_rgba(0,0,0,0.15)]">
+              <div className="relative border-3 sm:border-[4px] border-ink rounded-2xl sm:rounded-2.5xl overflow-hidden bg-[#e5e0d4] flex flex-col w-full shadow-[inset_0_4px_8px_rgba(0,0,0,0.15)]">
                 
                 {/* Screws in bezel corners */}
                 <div className="absolute top-1 left-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 border border-ink text-[4px] flex items-center justify-center font-bold text-ink select-none">×</div>
@@ -2993,18 +2993,18 @@ function DinoGame() {
                     ref={canvasRef}
                     width={560}
                     height={200}
-                    className="w-full h-full block cursor-pointer"
+                    className="w-full h-full block cursor-pointer touch-action-none"
                     onClick={handleJump}
                   />
 
                   {/* Start overlay */}
                   {!isPlaying && !isGameOver && (
                     <div className="absolute inset-0 bg-white/95 flex flex-col items-center justify-center p-4 z-20">
-                      <div className="font-display text-4xl text-ink mb-1 rotate-[-1deg] text-center">Dino Wants to Bunk! 🎒</div>
-                      <div className="font-hand text-base text-ink/75 mb-4 text-center">Help Dino run away from Amity lectures.</div>
+                      <div className="font-display text-2xl sm:text-4xl text-ink mb-1 rotate-[-1deg] text-center">Dino Wants to Bunk! 🎒</div>
+                      <div className="font-hand text-xs sm:text-base text-ink/75 mb-3 sm:mb-4 text-center">Help Dino run away from Amity lectures.</div>
                       <button
                         onClick={startGame}
-                        className="px-6 py-2.5 rounded-xl border-2 border-ink bg-[var(--sun)] font-marker text-lg shadow-[3px_3px_0_0_var(--color-ink)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer"
+                        className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl border-2 border-ink bg-[var(--sun)] font-marker text-sm sm:text-lg shadow-[2.5px_2.5px_0_0_var(--color-ink)] sm:shadow-[3px_3px_0_0_var(--color-ink)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer"
                       >
                         Start Running ⚡
                       </button>
@@ -3014,15 +3014,15 @@ function DinoGame() {
                   {/* Game Over overlay */}
                   {isGameOver && (
                     <div className="absolute inset-0 bg-white/90 flex flex-col items-center justify-center p-4 z-20">
-                      <div className="font-display text-4.5xl text-[#ff2d55] mb-1 rotate-[-2deg] animate-bounce text-center">
+                      <div className="font-display text-3xl sm:text-4xl text-[#ff2d55] mb-1 rotate-[-2deg] animate-bounce text-center">
                         Class Caught You! 🏫
                       </div>
-                      <div className="font-hand text-base text-ink/75 mb-4 text-center">
+                      <div className="font-hand text-xs sm:text-base text-ink/75 mb-3 sm:mb-4 text-center">
                         You made it {score} meters before getting caught.
                       </div>
                       <button
                         onClick={startGame}
-                        className="px-6 py-2.5 rounded-xl border-2 border-ink bg-[var(--sun)] font-marker text-lg shadow-[3px_3px_0_0_var(--color-ink)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer"
+                        className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl border-2 border-ink bg-[var(--sun)] font-marker text-sm sm:text-lg shadow-[2.5px_2.5px_0_0_var(--color-ink)] sm:shadow-[3px_3px_0_0_var(--color-ink)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer"
                       >
                         Try Bunking Again ⚡
                       </button>
@@ -3031,32 +3031,32 @@ function DinoGame() {
                 </div>
 
                 {/* Control Panel Dashboard */}
-                <div className="p-4 flex flex-col gap-4 bg-[#dfd9c8] select-none border-t-2 border-ink">
+                <div className="p-2 sm:p-4 flex flex-col gap-2 sm:gap-4 bg-[#dfd9c8] select-none border-t-2 border-ink">
                   {/* Row 1: Status Lamps & Room Info */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-1.5">
                     {/* Status Lamp */}
-                    <div className="flex items-center gap-2.5 bg-white/70 border-2 border-ink px-3 py-1 rounded-xl shadow-[2px_2px_0_0_var(--color-ink)]">
-                      <div className={`h-3 w-3 rounded-full border-2 border-ink transition-all duration-300 ${
+                    <div className="flex items-center gap-1.5 sm:gap-2.5 bg-white/70 border-2 border-ink px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl shadow-[1.5px_1.5px_0_0_var(--color-ink)] sm:shadow-[2px_2px_0_0_var(--color-ink)]">
+                      <div className={`h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full border-2 border-ink transition-all duration-300 ${
                         isGameOver ? 'bg-[#ff2d55] shadow-[0_0_6px_#ff2d55]' :
                         isPlaying ? 'bg-[#4cd964] shadow-[0_0_6px_#4cd964] animate-pulse' :
                         'bg-[#ffcc00] shadow-[0_0_6px_#ffcc00]'
                       }`} />
-                      <span className="font-marker text-[10px] tracking-wide text-ink">
+                      <span className="font-marker text-[8.5px] sm:text-[10px] tracking-wide text-ink">
                         {isGameOver ? 'CAUGHT!' : isPlaying ? 'BUNKING' : 'READY'}
                       </span>
                     </div>
 
                     {/* Level Badge Banner */}
-                    <div className="px-3 py-0.5 rounded-lg border-2 border-ink bg-[var(--sun)] text-[10px] font-marker text-ink shadow-[2px_2px_0_0_var(--color-ink)] rotate-[1.5deg]">
+                    <div className="px-2.5 py-0.5 rounded-lg border-2 border-ink bg-[var(--sun)] text-[8.5px] sm:text-[10px] font-marker text-ink shadow-[1.5px_1.5px_0_0_var(--color-ink)] sm:shadow-[2px_2px_0_0_var(--color-ink)] rotate-[1.5deg]">
                       {getLevelInfo(score).title}
                     </div>
                   </div>
 
-                  {/* Row 2: Tactile Buttons & Grade Lever */}
-                  <div className="flex items-center justify-between gap-2 pt-1 pb-1">
+                  {/* Row 2: Tactile Controls */}
+                  <div className="flex items-center justify-between gap-1.5 sm:gap-2 pt-1 pb-1">
                     
-                    {/* D-Pad controls decoration */}
-                    <div className="flex items-center gap-3">
+                    {/* D-Pad controls decoration (hidden on mobile to save space) */}
+                    <div className="hidden sm:flex items-center gap-3">
                       <div className="relative w-14 h-14 flex items-center justify-center shrink-0">
                         {/* Horizontal Cross */}
                         <div className="absolute w-12 h-3.5 bg-[#2d3748] border-2 border-ink rounded-sm" />
@@ -3075,8 +3075,8 @@ function DinoGame() {
                     </div>
 
                     {/* Select/Start Pill Buttons + Direct Mute Switch + Volume Dial */}
-                    <div className="flex items-center gap-3.5 rotate-[-4deg]">
-                      <div className="flex gap-2">
+                    <div className="flex items-center gap-2 sm:gap-3.5 rotate-[-4deg]">
+                      <div className="hidden sm:flex gap-2">
                         <div className="flex flex-col items-center">
                           <div className="w-6 h-2 bg-slate-500 border-2 border-ink rounded-full shadow-[1px_1px_0_0_var(--color-ink)]" />
                           <span className="text-[7px] font-marker text-ink/40 mt-0.5">SELECT</span>
@@ -3114,7 +3114,7 @@ function DinoGame() {
                               }, 50);
                             }
                           }}
-                          className={`w-7 h-7 rounded-xl border-2 border-ink shadow-[2px_2px_0_0_rgba(27,31,36,1)] active:translate-y-[0.5px] active:translate-x-[0.5px] active:shadow-none hover:brightness-95 transition-all flex items-center justify-center cursor-pointer text-[11px] ${
+                          className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg sm:rounded-xl border-2 border-ink shadow-[1.5px_1.5px_0_0_rgba(27,31,36,1)] sm:shadow-[2px_2px_0_0_rgba(27,31,36,1)] active:translate-y-[0.5px] active:translate-x-[0.5px] active:shadow-none hover:brightness-95 transition-all flex items-center justify-center cursor-pointer text-[10px] sm:text-[11px] ${
                             volumeIndex === 0 
                               ? "bg-[#ff2d55] text-white" 
                               : "bg-[#4cd964] text-ink"
@@ -3123,7 +3123,7 @@ function DinoGame() {
                         >
                           {volumeIndex === 0 ? "🔇" : "🔊"}
                         </button>
-                        <span className="text-[6.5px] font-marker text-ink/50 mt-0.5">MUTE</span>
+                        <span className="text-[6px] sm:text-[6.5px] font-marker text-ink/50 mt-0.5">MUTE</span>
                       </div>
 
                       {/* Physical Volume Dial */}
@@ -3150,36 +3150,36 @@ function DinoGame() {
                               }
                             } catch(e){}
                           }}
-                          className="relative w-7 h-7 rounded-full bg-slate-800 border-2 border-ink shadow-[2px_2px_0_0_rgba(27,31,36,1)] active:translate-y-[0.5px] active:translate-x-[0.5px] active:shadow-none hover:bg-slate-700 transition-all cursor-pointer flex items-center justify-center overflow-hidden"
+                          className="relative w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-800 border-2 border-ink shadow-[1.5px_1.5px_0_0_rgba(27,31,36,1)] sm:shadow-[2px_2px_0_0_rgba(27,31,36,1)] active:translate-y-[0.5px] active:translate-x-[0.5px] active:shadow-none hover:bg-slate-700 transition-all cursor-pointer flex items-center justify-center overflow-hidden"
                         >
                           {/* Dial notch indicating current level */}
                           <div 
-                            className="absolute w-1 h-3.5 bg-amber-400 rounded-full transition-transform duration-200"
+                            className="absolute w-1 h-3 bg-amber-400 rounded-full transition-transform duration-200"
                             style={{
-                              transform: `rotate(${volumeIndex * 90 - 45}deg) translateY(-5px)`,
-                              transformOrigin: "center 5px",
+                              transform: `rotate(${volumeIndex * 90 - 45}deg) translateY(-4px)`,
+                              transformOrigin: "center 4px",
                             }}
                           />
                           {/* Metallic cap center */}
-                          <div className="w-2.5 h-2.5 rounded-full bg-slate-600 border border-ink" />
+                          <div className="w-2 h-2 rounded-full bg-slate-600 border border-ink" />
                         </button>
-                        <span className="text-[6.5px] font-marker text-ink/50 mt-0.5">VOL: {VOLUME_LABELS[volumeIndex]}</span>
+                        <span className="text-[6px] sm:text-[6.5px] font-marker text-ink/50 mt-0.5">VOL: {VOLUME_LABELS[volumeIndex]}</span>
                       </div>
                     </div>
 
-                    {/* Right side: Vertical Stack of Lever (above) and A/B Buttons (below) */}
-                    <div className="flex flex-col items-center gap-2.5">
+                    {/* Right side: Lever & A/B Buttons */}
+                    <div className="flex items-center gap-2">
                       
-                      {/* 3D Pull Grade Lever Component */}
-                      <div className="relative p-2 bg-[#d7c4a1] border-[3px] border-ink rounded-2xl shadow-[4px_4px_0_0_var(--color-ink)] flex items-center justify-center rotate-1 shrink-0 scale-90 origin-bottom">
+                      {/* 3D Pull Grade Lever Component (scaled down on mobile) */}
+                      <div className="relative p-1 sm:p-2 bg-[#d7c4a1] border-2 sm:border-[3px] border-ink rounded-xl sm:rounded-2xl shadow-[3px_3px_0_0_var(--color-ink)] flex items-center justify-center rotate-1 shrink-0 scale-[0.8] sm:scale-90 origin-bottom">
                         {/* Tiny plate rivets */}
-                        <div className="absolute top-1 left-1 w-1.5 h-1.5 rounded-full bg-slate-400 border border-ink flex items-center justify-center text-[4px] text-ink font-bold select-none">×</div>
-                        <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-slate-400 border border-ink flex items-center justify-center text-[4px] text-ink font-bold select-none">×</div>
-                        <div className="absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full bg-slate-400 border border-ink flex items-center justify-center text-[4px] text-ink font-bold select-none">×</div>
-                        <div className="absolute bottom-1 right-1 w-1.5 h-1.5 rounded-full bg-slate-400 border border-ink flex items-center justify-center text-[4px] text-ink font-bold select-none">×</div>
+                        <div className="absolute top-0.5 left-0.5 w-1 h-1 rounded-full bg-slate-400 border border-ink flex items-center justify-center text-[3px] text-ink font-bold select-none">×</div>
+                        <div className="absolute top-0.5 right-0.5 w-1 h-1 rounded-full bg-slate-400 border border-ink flex items-center justify-center text-[3px] text-ink font-bold select-none">×</div>
+                        <div className="absolute bottom-0.5 left-0.5 w-1 h-1 rounded-full bg-slate-400 border border-ink flex items-center justify-center text-[3px] text-ink font-bold select-none">×</div>
+                        <div className="absolute bottom-0.5 right-0.5 w-1 h-1 rounded-full bg-slate-400 border border-ink flex items-center justify-center text-[3px] text-ink font-bold select-none">×</div>
 
                         {/* Tick Marks */}
-                        <div className="flex flex-col justify-between items-center h-16 mr-2 font-marker text-[8px] font-bold select-none leading-none pt-0.5 pb-0.5 text-ink/80">
+                        <div className="flex flex-col justify-between items-center h-12 sm:h-16 mr-1.5 sm:mr-2 font-marker text-[7px] sm:text-[8px] font-bold select-none leading-none pt-0.5 pb-0.5 text-ink/80">
                           <span className="text-emerald-600">A+</span>
                           <span className="text-amber-500">B</span>
                           <span className="text-rose-500 font-extrabold">F</span>
@@ -3187,51 +3187,49 @@ function DinoGame() {
 
                         {/* 3D Arcade Push Button */}
                         <div 
-                          className="relative w-14 h-16 flex items-center justify-center cursor-pointer pointer-events-auto touch-none select-none"
+                          className="relative w-10 h-12 sm:w-14 sm:h-16 flex items-center justify-center cursor-pointer pointer-events-auto touch-none select-none"
                           onPointerDown={handleLeverDown}
                           onPointerUp={handleLeverUp}
                           onPointerLeave={handleLeverUp}
                         >
                           {/* Button Socket/Bezel */}
-                          <div className="absolute w-12 h-12 bg-slate-900 border-2 border-ink rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.8)]" />
+                          <div className="absolute w-9 h-9 sm:w-12 sm:h-12 bg-slate-900 border-2 border-ink rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.8)]" />
                           
                           {/* Button Cap */}
                           <div 
-                            className="absolute w-10 h-10 rounded-full bg-[radial-gradient(circle_at_35%_35%,#ff4d4d_0%,#cc0000_60%,#800000_100%)] border-2 border-ink transition-all duration-75 flex items-center justify-center"
+                            className="absolute w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-[radial-gradient(circle_at_35%_35%,#ff4d4d_0%,#cc0000_60%,#800000_100%)] border-2 border-ink transition-all duration-75 flex items-center justify-center"
                             style={{
-                              transform: isLeverPulled ? 'translateY(3px) scale(0.95)' : 'translateY(0px)',
+                              transform: isLeverPulled ? 'translateY(2px) scale(0.95)' : 'translateY(0px)',
                               boxShadow: isLeverPulled 
-                                ? 'inset 0 2px 4px rgba(0,0,0,0.6)' 
-                                : '0 4px 0 0 #660000, 0 4px 6px rgba(0,0,0,0.4)',
+                                ? 'inset 0 1.5px 3px rgba(0,0,0,0.6)' 
+                                : '0 3px 0 0 #660000, 0 3px 5px rgba(0,0,0,0.4)',
                             }}
                           >
-                            {/* Inner gloss ring */}
-                            <div className="absolute top-1 left-2 w-3 h-1.5 bg-white/40 rounded-full rotate-[-15deg] pointer-events-none" />
-                            {/* Button Label */}
-                            <span className="font-sketch text-[8px] font-bold text-white tracking-widest pointer-events-none select-none">BUNK</span>
+                            <div className="absolute top-0.5 left-1.5 w-2 h-1 bg-white/40 rounded-full rotate-[-15deg] pointer-events-none" />
+                            <span className="font-sketch text-[7px] sm:text-[8px] font-bold text-white tracking-wider pointer-events-none select-none">BUNK</span>
                           </div>
                         </div>
                       </div>
 
                       {/* B & A buttons (both jump Dino) */}
-                      <div className="flex gap-3 select-none rotate-[-4deg] scale-95 mt-1">
+                      <div className="flex gap-1.5 sm:gap-3 select-none rotate-[-4deg] scale-[0.8] sm:scale-95 origin-right">
                         <div className="flex flex-col items-center">
                           <button 
                             onClick={handleJump}
-                            className="w-8 h-8 rounded-full bg-[#ff2d55] border-2 border-ink shadow-[2px_2px_0_0_var(--color-ink)] active:translate-y-[1px] active:translate-x-[1px] active:shadow-none hover:bg-[#e02447] transition-all cursor-pointer flex items-center justify-center font-bold text-white text-[10px]"
+                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#ff2d55] border-2 border-ink shadow-[1.5px_1.5px_0_0_var(--color-ink)] sm:shadow-[2px_2px_0_0_var(--color-ink)] active:translate-y-[1px] active:translate-x-[1px] active:shadow-none hover:bg-[#e02447] transition-all cursor-pointer flex items-center justify-center font-bold text-white text-[9px] sm:text-[10px]"
                           >
                             B
                           </button>
-                          <span className="text-[6.5px] font-marker text-ink/60 mt-0.5">JUMP</span>
+                          <span className="text-[5.5px] sm:text-[6.5px] font-marker text-ink/60 mt-0.5">JUMP</span>
                         </div>
                         <div className="flex flex-col items-center">
                           <button 
                             onClick={handleJump}
-                            className="w-8 h-8 rounded-full bg-[#ffd200] border-2 border-ink shadow-[2px_2px_0_0_var(--color-ink)] active:translate-y-[1px] active:translate-x-[1px] active:shadow-none hover:bg-[#e6bd00] transition-all cursor-pointer flex items-center justify-center font-bold text-ink text-[10px]"
+                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#ffd200] border-2 border-ink shadow-[1.5px_1.5px_0_0_var(--color-ink)] sm:shadow-[2px_2px_0_0_var(--color-ink)] active:translate-y-[1px] active:translate-x-[1px] active:shadow-none hover:bg-[#e6bd00] transition-all cursor-pointer flex items-center justify-center font-bold text-ink text-[9px] sm:text-[10px]"
                           >
                             A
                           </button>
-                          <span className="text-[6.5px] font-marker text-ink/60 mt-0.5">JUMP</span>
+                          <span className="text-[5.5px] sm:text-[6.5px] font-marker text-ink/60 mt-0.5">JUMP</span>
                         </div>
                       </div>
 
@@ -3243,11 +3241,11 @@ function DinoGame() {
             </div>
 
             {/* Dino Gear Unlock Progress checklist */}
-            <div className="w-full mt-5 p-4 bg-[#fcf8f2] border-[3px] border-ink rounded-2.5xl shadow-[4px_4px_0_0_var(--color-ink)] rotate-[0.5deg]">
-              <div className="font-display text-lg text-ink mb-3 text-center flex items-center justify-center gap-1.5 select-none">
+            <div className="w-full mt-3 sm:mt-5 p-2 sm:p-4 bg-[#fcf8f2] border-2 sm:border-[3px] border-ink rounded-2.5xl shadow-[3px_3px_0_0_var(--color-ink)] sm:shadow-[4px_4px_0_0_var(--color-ink)] rotate-[0.5deg]">
+              <div className="font-display text-sm sm:text-lg text-ink mb-2 sm:mb-3 text-center flex items-center justify-center gap-1.5 select-none">
                 <span>🎒</span> Dino Bunk Gear Checklist <span>🎓</span>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-[10.5px] font-marker text-ink">
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 sm:gap-2 text-[8px] sm:text-[10.5px] font-marker text-ink">
                 {[
                   { lvl: 1, req: "0m", label: "Backpack 🎒", check: true },
                   { lvl: 2, req: "120m", label: "Glasses 👓", check: currentLevel >= 2 },
@@ -3257,15 +3255,15 @@ function DinoGame() {
                 ].map((item) => (
                   <div 
                     key={item.lvl} 
-                    className={`flex flex-col items-center p-2.5 rounded-xl border-2 transition-all ${
+                    className={`flex flex-col items-center p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl border-2 transition-all ${
                       item.check 
-                        ? "bg-[#dcfadc] border-emerald-600/90 text-emerald-800 shadow-[1.5px_1.5px_0_0_rgba(27,31,36,1)]" 
+                        ? "bg-[#dcfadc] border-emerald-600/90 text-emerald-800 shadow-[1px_1px_0_0_rgba(27,31,36,1)] sm:shadow-[1.5px_1.5px_0_0_rgba(27,31,36,1)]" 
                         : "bg-slate-50 border-ink/20 text-ink/40"
                     }`}
                   >
                     <div className="font-bold">LVL {item.lvl} ({item.req})</div>
-                    <div className="text-[10px] mt-1 text-center font-hand font-bold whitespace-nowrap">{item.label}</div>
-                    <div className="mt-1.5 text-[9px] font-bold">
+                    <div className="text-[8px] sm:text-[10px] mt-0.5 sm:mt-1 text-center font-hand font-bold whitespace-nowrap">{item.label}</div>
+                    <div className="mt-1 text-[7.5px] sm:text-[9px] font-bold">
                       {item.check ? "✅ Active" : "🔒 Locked"}
                     </div>
                   </div>
@@ -3274,7 +3272,7 @@ function DinoGame() {
             </div>
 
             {/* Instructions info */}
-            <div className="mt-4 font-marker text-[11px] text-ink/65 text-center leading-normal">
+            <div className="mt-2.5 sm:mt-4 font-marker text-[9px] sm:text-[11px] text-ink/65 text-center leading-normal">
               Press [Space], [Up Arrow], click the screen, press A/B, or pull the grade lever to jump!
             </div>
           </div>
